@@ -1,8 +1,7 @@
 function fechaActualFormateada(ev) {
 	var form = document.querySelector("form");
 	var f = new Date();
-	var fechaFormateada = f.getFullYear() + "-" + ("0" + (f.getMonth() + 1)).slice(-2) + "-" + f.getDate();
-	
+	var fechaFormateada = f.getFullYear() + "-" + ("0" + (f.getMonth() + 1)).slice(-2) + "-" + ("0" + (f.getDate())).slice(-2);
 	form.elements['fechaCita'].value = fechaFormateada;
 	form.elements['fechaCita'].min = fechaFormateada;
 }

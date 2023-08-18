@@ -21,7 +21,7 @@ session_destroy();
     </div>
     <label class="tituloGeneral">Ingreso Usuario</label>
 
-        <form action="back/usuario/sesion.php" method="post" class="estiloFormulario">
+        <form action="front/menu.php" method="post" class="estiloFormulario">
             <fieldset id="estiloFieldset">
                 <legend>Datos Acceso</legend>
                 <div class="elementoFormulario">
@@ -30,7 +30,8 @@ session_destroy();
                 </div>
                 <div class="elementoFormulario">
                     <label for="forContrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" value="" required> 
+                    <input type="password" id="contrasena" name="contrasena" value="" required>
+					<input type="hidden" id="token" name="token" value=""> 
                 </div>
                 <div class="botonFormulario">
                     <input type="submit" value="Aceptar">

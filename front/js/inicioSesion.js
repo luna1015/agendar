@@ -21,7 +21,7 @@ async function enviarFormulario(ev) {
   };
   // petición ajax con fetch
   try {
-    var response = await fetch(form.action, init);
+    var response = await fetch("back/usuario/sesion.php", init);
     if (response.ok) {
       // obtenemos la respuesta del servidor web
       // se supone que el servidor nos responderá
@@ -31,12 +31,13 @@ async function enviarFormulario(ev) {
       // asumimos que todo ha ido bien,
       // damos las gracias y limpiamos el formulario
 	  if ( respuesta.length > 0 ) {
-		  var token = "";
+		  var valueToken = "";
 		  for (item of respuesta) {			  
-			  token = item.token;
+			  valueToken = item.token;
 		  } // End for
+		  form.elements['token'].value = valueToken;
 		  mensaje = "Acceso concedido";
-		  location.href="front/menu.php?token="+token;
+		  form.submit();
 	  } else {
 		  mensaje = "Usuario y/o clave invalida.";
 	  }

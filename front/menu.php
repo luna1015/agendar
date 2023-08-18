@@ -3,8 +3,8 @@
 session_id("sisas");
 session_start();
 
-if ( isset($_GET["token"]) ) {
-	$_SESSION["token"] = $_GET["token"];
+if ( isset($_POST["token"]) ) {
+	$_SESSION["token"] = $_POST["token"];
 }
 
 ?>
